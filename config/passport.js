@@ -115,9 +115,9 @@ module.exports = function(passport) {
                     return done(null, false, req.flash('loginMessage', 'No user found.'));
 
                 if (!user.validPassword(password))
-                    return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
+                    return done(null, false, req.flash('loginMessage', ' Wrong password.'));
 
-                // all is well, return user
+                //  return user
                 else
                     return done(null, user);
             });
@@ -204,7 +204,7 @@ module.exports = function(passport) {
                       // if a user is found, log them in
                       return done(null, socialuser);
                   } else {
-                      // if the user isnt in our database, create a new user
+                      // if the user isn't in our database, create a new user
                       var newSocialUser          = new SocialUser();
 
                       // set all of the relevant information
@@ -226,4 +226,4 @@ module.exports = function(passport) {
       }));
 
 
-}//module exports ending
+}
